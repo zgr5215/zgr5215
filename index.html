@@ -1,7 +1,42 @@
-<p>
- <title> Zachary Gravel Project Portfolio </title>
- <h2>Machine Design- Planetary Gearset</h2>
- <a href="planetary_gearset.html">
+
+
+<head>
+<style>
+.flex-container {
+  display: flex;
+  background-color: MediumSeaGreen;
+  flex-wrap: wrap;
+  margin: 15px;
+  padding: 30px;
+  font-size: 30px;
+  
+  
+}
+
+.flex-container > div {
+  background-color: Tomato;
+  margin: 15px;
+  padding: 30px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>Create a Flex Container</h1>
+
+<div class="flex-container">
+<div> <a href="planetary_gearset.html">
   <img src="https://media.istockphoto.com/id/503889417/photo/planetary-reducer-from-metallic-gear-on-white-background.jpg?s=612x612&w=0&k=20&c=PHbc5MLC8dPNGM1BmgIFsLsTU_NiNGchCqOFjVopfDQ=" alt="Planetary Gearset" width="200" height="200">
- </a>
-</p>
+ </a></div>
+ <div> <a href="planetary_gearset.html">
+  <img src="https://media.istockphoto.com/id/503889417/photo/planetary-reducer-from-metallic-gear-on-white-background.jpg?s=612x612&w=0&k=20&c=PHbc5MLC8dPNGM1BmgIFsLsTU_NiNGchCqOFjVopfDQ=" alt="Planetary Gearset" width="200" height="200">
+ </a></div>
+</div>
+
+<p>A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em>.</p>
+
+<p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+
+</body>
+</html>
