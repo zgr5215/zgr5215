@@ -1,6 +1,8 @@
+
 <p>
- <h1>Machine Design- Planetary Gearset</h1>
+ <title> Zachary Gravel Project Portfolio </title>
+ <h2>Machine Design- Planetary Gearset</h2>
  <a href="https://www.computerhope.com/">
-  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pengky.cn%2Fzz-horizontal-axis-turbine%2F17-Planetary-gear-increase-speed%2Fplanetary-gear-increase-speed.html&psig=AOvVaw3Kh6Oo_ZRzChng6ojPC35_&ust=1720807494124000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOCTztDJn4cDFQAAAAAdAAAAABAR">
+  <img src="https://media.istockphoto.com/id/503889417/photo/planetary-reducer-from-metallic-gear-on-white-background.jpg?s=612x612&w=0&k=20&c=PHbc5MLC8dPNGM1BmgIFsLsTU_NiNGchCqOFjVopfDQ=" alt="Planetary Gearset" width="200" height="200">
  </a>
 </p>
