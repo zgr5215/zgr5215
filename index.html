@@ -1,13 +1,25 @@
 <head>
 <style>
-  div.fixed {
+.fixed {
   display: flex;
   position: fixed;
   top: 0;
   left: 0;
-  border: 3px solid #73AD21;
+ width: 100%;
+  flex-wrap: wrap;
+  padding: 15px;
+  background-color: #ededed;
+  border-radius: 0 0 25px 25px;
 }
-  
+.fixed > div{
+  background-color: gray;
+  max-width: 75px;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+   text-align: center;
+
+}
 .flex-container {
   display: flex;
   background-color: ;
@@ -39,7 +51,12 @@ img {
 <body>
 
 <h1>Zachary Gravel Project Portfolio</h1>
-
+<div class="fixed">
+<div>
+  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fimgbin.com%2Fpng%2FBkst4TNi%2Farrow-computer-icons-drop-down-list-symbol-png&psig=AOvVaw3uovPGySVf6P_9CxvKuDpM&ust=1721037905370000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMi7hfyjpocDFQAAAAAdAAAAABAJ" alt="Strong Password Image" width="25" height="25">
+</div>
+</div>
+  
 <div class="flex-container">
 <div>  <h6>Machine Design- Planetary Gearset</h6> <a href="planetary_gearset.html">
   <img src="https://media.istockphoto.com/id/503889417/photo/planetary-reducer-from-metallic-gear-on-white-background.jpg?s=612x612&w=0&k=20&c=PHbc5MLC8dPNGM1BmgIFsLsTU_NiNGchCqOFjVopfDQ=" alt="Planetary Gearset" width="200" height="200">
