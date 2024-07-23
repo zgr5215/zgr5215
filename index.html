@@ -1,18 +1,23 @@
+<html>
 <head>
 <style>
-.fixed1 {
+
+* {
+  box-sizing: border-box;
+}
+.navbar {
   display: flex;
   position: fixed;
   top: 0;
   left: 0;
  width:100%;
-  box-sizing: border-box;
+ /* box-sizing: border-box;*/
   flex-wrap: wrap;
   padding: 15px;
   background-color: #124E66;
   border-radius: 0 0 25px 25px;
 }
-.fixed1 < div {
+.navbar < div {
   display: flex;
   max-width: 75px;
   padding: 5px;
@@ -21,89 +26,104 @@
    text-align: center;
   max-height: 35px;
   margin: 0px 5px 0px 5px;
-  align-items: center;
-  
-}
+  align-items: center; 
+} 
+    .flex-container {
+      display: flex;
+      background-color: ;
+      flex-wrap: wrap;
+      margin: 15px;
+      padding: 30px;
+      font-size: 30px;
+    }
+    .flex-container > div {
+      background-color: gray;
+      max-width: 250px;
+      margin: 15px;
+      padding: 10px;
+      font-size: 30px;
+      border-radius: 25px;
+    }
+    .rounded {
+      border-radius: 25px;
+    }
 
-  
-.flex-container {
-  display: flex;
-  background-color: ;
-  flex-wrap: wrap;
-  margin: 15px;
-  padding: 30px;
-  font-size: 30px;
-  
-  
-  
-}
+          .sidenav {
+            height: 100%; 
+            width: 0; 
+            position: fixed; 
+            z-index: 1; 
+            top: 0; 
+            left: 0;
+            background-color: #212A31;
+            overflow-x: hidden; 
+            padding-top: 60px;
+            transition: 0.5s; 
+          }
+          
+          .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #748D92;
+            display: block;
+            transition: 0.3s;
+          }
+          
+          .sidenav a:hover {
+            color: #f1f1f1;
+          }
+          
+          .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+          }
+          
+          #main {
+            transition: margin-left .5s;
+            padding: 20px;
+          }
+            
+          @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+          }
+          
+          
+          		.row {  
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction:row;
+                  width: 100%;
+                  box-sizing: border-box;
+                }
 
-.flex-container > div {
-  background-color: gray;
-  max-width: 250px;
-  margin: 15px;
-  padding: 10px;
-  font-size: 30px;
-  border-radius: 25px;
-}
-.rounded {
-  border-radius: 25px;
-}
+                /* Create two unequal columns that sits next to each other */
+                /* Sidebar/left column */
+                .side {
+                  flex: 30%;
+                  background-color: #f1f1f1;
+                 padding: 20px;
+                 
 
+                }
 
-  
+                /* Main column */
+                .main {
+                  flex: 70%;
+                  background-color: white;
+                  padding: 20px;
 
-.sidenav {
-  height: 100%; 
-  width: 0; 
-  position: fixed; 
-  z-index: 1; 
-  top: 0; 
-  left: 0;
-  background-color: #212A31;
-  overflow-x: hidden; 
-  padding-top: 60px;
-  transition: 0.5s; 
-}
-
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #748D92;
-  display: block;
-  transition: 0.3s;
-}
-
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-
+                }
+            
 </style>
 <link rel="shortcut icon" types=" images/x-icon" href="images/favicon.ico" />
 </head>
+
+
 <body>
 
   <div id="mySidenav" class="sidenav">
@@ -118,7 +138,7 @@
 
 
 <div id="main">
-<div class="fixed1">
+<div class="navbar">
 <div onclick="openNav()">
   <img src="images/menu.jpg" alt="Menu" width="25" height="25" >
 </div>
@@ -127,8 +147,33 @@
 <div style="margin-left:auto"> <a href="https://www.linkedin.com/in/zgr5215">
   <img src="images/linkedin.png" alt="Linkedin" width="25" height="25"> </a></div>
 </div>
+</div>
 
-  
+<!-- The flexible grid (content) -->
+<div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+
+    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    <h3>More Text</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    </div>
+  <div class="main">
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Dec 7, 2017</h5>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Sep 2, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  </div>
+</div>
+
+<!--  
 <h1>Zachary Gravel Project Portfolio</h1>
 
   
@@ -142,7 +187,7 @@
  </div>
 </div>
 
-</div>
+</div>-->
 
 <script>
 
@@ -161,3 +206,4 @@ function closeNav() {
 
 </body>
 </html>
+
