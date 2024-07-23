@@ -8,10 +8,11 @@
  width: 100%;
   flex-wrap: wrap;
   padding: 15px;
-  background-color: #D3D9D4;
+  background-color: #124E66;
   border-radius: 0 0 50px 25px;
 }
-.fixed > div{
+.fixed1 {
+  display: flex;
   max-width: 75px;
   padding: 5px;
   font-size: 15px;
@@ -20,8 +21,22 @@
   max-height: 35px;
   margin: 0px 5px 0px 5px;
   align-items: center;
-
+  justify-content: left;
 }
+
+  .fixed2 {
+    display: flex;
+  max-width: 75px;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+   text-align: center;
+  max-height: 35px;
+  margin: 0px 5px 0px 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+  
 .flex-container {
   display: flex;
   background-color: ;
@@ -115,12 +130,16 @@
 
 <div id="main">
 <div class="fixed">
+  <div class="fixed1">
 <div onclick="openNav()">
   <img src="images/menu.jpg" alt="Menu" width="25" height="25" >
 </div>
-
+    </div>
+  
+<div class="fixed2">
 <div> <a href="https://www.linkedin.com/in/zgr5215">
   <img src="images/linkedin.png" alt="Linkedin" width="25" height="25"> </a></div>
+</div>
 </div>
   
 <h1>Zachary Gravel Project Portfolio</h1>
