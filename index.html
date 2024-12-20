@@ -1,210 +1,239 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 <style>
-
+/* General reset */
 * {
   box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #748D92;
+  color: #333;
+}
+
+/* Navigation styles */
 .navbar {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
- width:100%;
- /* box-sizing: border-box;*/
-  flex-wrap: wrap;
-  padding: 15px;
-  background-color: #124E66;
-  border-radius: 0 0 25px 25px;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #3B4C56; /* Dark slate blue */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 0 0 10px 10px; /* Rounded corners */
 }
-.navbar < div {
+
+.navbar img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.navbar .menu-icon {
   display: flex;
-  max-width: 75px;
-  padding: 5px;
-  font-size: 15px;
-  border-radius: 5px;
-   text-align: center;
-  max-height: 35px;
-  margin: 0px 5px 0px 5px;
-  align-items: center; 
-} 
-    .flex-container {
-      display: flex;
-      background-color: ;
-      flex-wrap: wrap;
-      margin: 15px;
-      padding: 30px;
-      font-size: 30px;
-    }
-    .flex-container > div {
-      background-color: gray;
-      max-width: 250px;
-      margin: 15px;
-      padding: 10px;
-      font-size: 30px;
-      border-radius: 25px;
-    }
-    .rounded {
-      border-radius: 25px;
-    }
+  align-items: center;
+}
 
-          .sidenav {
-            height: 100%; 
-            width: 0; 
-            position: fixed; 
-            z-index: 1; 
-            top: 0; 
-            left: 0;
-            background-color: #212A31;
-            overflow-x: hidden; 
-            padding-top: 60px;
-            transition: 0.5s; 
-          }
-          
-          .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #748D92;
-            display: block;
-            transition: 0.3s;
-          }
-          
-          .sidenav a:hover {
-            color: #f1f1f1;
-          }
-          
-          .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-          }
-          
-          #main {
-            transition: margin-left .5s;
-            padding: 20px;
-          }
-            
-          @media screen and (max-height: 450px) {
-            .sidenav {padding-top: 15px;}
-            .sidenav a {font-size: 18px;}
-          }
-          
-          
-          		.row {  
-                  display: flex;
-                  flex-wrap: wrap;
-                  flex-direction:row;
-                  width: 100%;
-                  box-sizing: border-box;
-                left:0;
-                }
+.navbar .social-link img {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
 
-                /* Create two unequal columns that sits next to each other */
-                /* Sidebar/left column */
-                .side {
-                  flex: 30%;
-                  background-color: #f1f1f1;
-                 padding: 20px;
-                 
+/* Sidebar styles */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #212A31;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
 
-                }
+.sidenav a {
+  padding: 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #748D92;
+  display: block;
+  transition: 0.3s;
+}
 
-                /* Main column */
-                .main {
-                  flex: 70%;
-                  background-color: white;
-                  padding: 20px;
+.sidenav a:hover {
+  color: #f1f1f1;
+}
 
-                }
-            
+.sidenav .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+/* Main content styles */
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+/* About Me and Project Boxes using Flexbox */
+.row {
+  display: flex; /* Flex container to align items side by side */
+  gap: 10px; /* 10px space between About Me and Projects */
+}
+
+.side, .main {
+  padding: 20px;
+  margin: 0; /* No margin here since gap is used */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #D3D9D4; /* White background */
+
+}
+
+.side {
+  width: 30%; /* 30% width for the About Me section */
+  height: 50%;
+
+}
+
+.main {
+  width: 70%; /* 70% width for the Projects section */
+}
+
+/* Project section */
+.project {
+  margin-bottom: 10px; /* 10px space between projects */
+}
+
+.project h2 {
+  color: #124E66;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.project h2:hover {
+  color: #748D92;
+  text-decoration: underline;
+}
+
+.side p {
+  word-wrap: break-word; /* Ensure long words like emails break */
+  word-break: break-word; /* Prevents overflow and allows text wrapping */
+  white-space: normal; /* Allows text to wrap to the next line */
+}
+
+/* General text styling */
+.side h3, .side p {
+  margin: 10px 0;
+}
+
+/* Small screen adjustments */
+@media screen and (max-height: 450px) {
+  .sidenav { padding-top: 15px; }
+  .sidenav a { font-size: 18px; }
+}
+
+
+
 </style>
-<link rel="shortcut icon" types=" images/x-icon" href="images/favicon.ico" />
 </head>
 
 
 <body>
-
+	<!-- Navigation Sidebar -->
   <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="https://zgr5215.github.io/zgr5215">Home</a>
-  <a href="https://zgr5215.github.io/zgr5215/planetary_gearset.html">Planetary Gearset</a>
-  <a href="https://zgr5215.github.io/zgr5215/random_password_generator.html">Random Password Generator</a>
-  <a href="https://zgr5215.github.io/zgr5215">Contact</a>
-</div>
-
-
-
-
-<div id="main">
-<div class="navbar">
-<div onclick="openNav()">
-  <img src="images/menu.jpg" alt="Menu" width="25" height="25" >
-</div>
-
-
-<div style="margin-left:auto"> <a href="https://www.linkedin.com/in/zgr5215">
-  <img src="images/linkedin.png" alt="Linkedin" width="25" height="25"> </a></div>
-</div>
-</div>
-
-<!-- The flexible grid (content) -->
-<div class="row">
-  <div class="side">
-    <h2>About Me</h2>
-    <h5>Photo of me:</h5>
-
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    </div>
-  <div class="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <span class="closebtn" onclick="toggleNav()">&times;</span>
+    <a href="https://zgr5215.github.io/zgr5215">Home</a>
+    <a href="https://zgr5215.github.io/zgr5215/planetary_gearset.html">Planetary Gearset</a>
+    <a href="https://zgr5215.github.io/zgr5215/random_password_generator.html">Random Password Generator</a>
+    <a href="https://zgr5215.github.io/zgr5215">Contact</a>
   </div>
-</div>
-
-<!--  
-<h1>Zachary Gravel Project Portfolio</h1>
-
-  
-<div class="flex-container">
-<div>  <h6>Machine Design- Planetary Gearset</h6> <a href="planetary_gearset.html">
-  <img src="images/Planetary_gearset.png" alt="Planetary Gearset" width="200" height="200" class="rounded">
- </a></div>
- <div> <h6>Electrical Design - Random Password Generator</h6> <a href="random_password_generator.html">
-  <img src="images/Password_gen.jpg" alt="Strong Password Image" width="200" height="200" class="rounded">
- </a>
- </div>
-</div>
-
-</div>-->
+	
+    <!-- Navigation Topbar -->
+  <div id="main">
+    <div class="navbar">
+      <div class="menu-icon" onclick="toggleNav()">
+        <img src="images/menu.jpg" alt="Menu">
+      </div>
+      <div class="social-link">
+        <a href="https://www.linkedin.com/in/zgr5215">
+          <img src="images/linkedin.png" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+ 	
+    <!-- About Me -->
+    <div class="row">
+      <div class="side">
+        <h1>About Me</h1>
+        <h5>Professional Portfolio</h5>
+        <p>I am an engineering enthusiast with a passion for mechanical design, coding, and innovative solutions. My projects demonstrate technical skill, problem-solving abilities, and creativity in design. Feel free to explore and connect!</p>
+        <h3>Contact</h3>
+        <p>Email: example@example.com</p>
+      </div>
+      
+      <!-- Project 1 -->
+      <div class="main">
+        <div class="project">
+        <h1>Technical Projects</h1>
+          <h2>
+      <a href="https://zgr5215.github.io/zgr5215/planetary_gearset.html" style="text-decoration: none; color: inherit;">
+        Planetary Gearset
+      </a>
+    </h2>
+          <h5>Mechanical Design Project, Sept-Dec 2021</h5>
+          <p>This project involves designing and prototyping a fully functional planetary gearset. Starting with a wooden prototype, the final model showcases precision-machined aluminum components.</p>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project">
+          <h2>Random Password Generator</h2>
+          <h5>Electronics and Software Design, Jan-Apr 2022</h5>
+          <p>A secure and efficient random password generator built using Raspberry Pi and Python, featuring customizable parameters and a user-friendly interface.</p>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project">
+          <h2>3D Printer Controller</h2>
+          <h5>Mechatronics Project, Jan-Apr 2022</h5>
+          <p>Developed a remote 3D printer control system using a Raspberry Pi and control board, enabling wireless operation and enhanced functionality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <script>
+  function toggleNav() {
+    const sidenav = document.getElementById("mySidenav");
+    const main = document.getElementById("main");
 
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
+    if (sidenav.style.width === "250px") {
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+    } else {
+      sidenav.style.width = "250px";
+      main.style.marginLeft = "250px";
+    }
+  }
 </script>
-
-
 </body>
 </html>
+
 
