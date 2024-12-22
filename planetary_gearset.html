@@ -1,43 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
-.flex-container {
-  display: flex;
-  background-color: MediumSeaGreen;
-  flex-wrap: wrap;
-  margin: 15px;
-  padding: 30px;
-  font-size: 30px;
-  
-  
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Subpage</title>
 
-.flex-container > div {
-  background-color: Tomato;
-  margin: 15px;
-  padding: 30px;
-  font-size: 30px;
-}
-</style>
+  <!-- CSS Styles -->
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2C3E50;
+      color: #ECF0F1;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #34495E;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .top-nav a {
+      color: #ECF0F1;
+      margin: 0 10px;
+    }
+
+    /* Side Navigation */
+    .side-nav {
+      position: fixed;
+      left: 0;
+      top: 60px; /* Offset for top nav */
+      width: 200px;
+      height: calc(100% - 60px);
+      background-color: #3B4C56;
+      padding: 10px;
+    }
+
+    .side-nav a {
+      display: block;
+      margin: 10px 0;
+      color: #ECF0F1;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .side-nav a:hover {
+      background-color: #748D92;
+    }
+
+    /* Main Content */
+    .content {
+      margin-left: 220px; /* Offset for side nav */
+      padding: 20px;
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      padding: 10px;
+      border: none;
+      background-color: #3B4C56;
+      color: white;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    #backToTop:hover {
+      background-color: #748D92;
+    }
+  </style>
+
 </head>
 <body>
 
-<h1>Create a Flex Container</h1>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <a href="index.html" class="logo">Home</a>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#challenges">Challenges</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#results">Results</a>
+    </nav>
+  </header>
 
-<div class="flex-container">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
-  <div>7</div>
-  <div>8</div>
-  <div>9</div>
-</div>
+  <!-- Side Navigation -->
+  <aside class="side-nav">
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#challenges">Challenges</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#results">Results</a>
+    </nav>
+  </aside>
 
-<p>A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em>.</p>
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Overview Section -->
+    <section id="overview">
+      <h1>Project Name</h1>
+      <p>Brief introduction or summary of the project.</p>
+    </section>
 
-<p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+    <!-- Challenges Section -->
+    <section id="challenges">
+      <h2>Challenges</h2>
+      <p>Describe the challenges faced during this project.</p>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions">
+      <h2>Solutions</h2>
+      <p>Explain the solutions implemented to overcome the challenges.</p>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results">
+      <h2>Results</h2>
+      <p>Showcase the results of the project.</p>
+
+      <!-- Commented-out Image Gallery -->
+      <!-- Uncomment and add images when ready -->
+      <!-- 
+      <div class="image-gallery">
+        <img src="image1.jpg" alt="Result Image 1">
+        <img src="image2.jpg" alt="Result Image 2">
+      </div>
+      -->
+
+      <!-- Commented-out Video Section -->
+      <!-- Uncomment and add video file when ready -->
+      <!-- 
+      <div class="video-section">
+        <video controls>
+          <source src="process.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      -->
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads">
+      <h2>Downloadable Resources</h2>
+      <p>Download files related to this project.</p>
+
+      <!-- Commented-out Download Links -->
+      <!-- Uncomment and link files when ready -->
+      <!-- 
+      <div class="downloads">
+        <a href="design_files.zip" download>
+          <button class="download-btn">Download CAD Files</button>
+        </a>
+        <a href="project_report.pdf" download>
+          <button class="download-btn">Download Report</button>
+        </a>
+      </div>
+      -->
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+  <!-- JavaScript -->
+  <script>
+    // Scroll to Top Functionality
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function () {
+      const button = document.getElementById('backToTop');
+      button.style.display = window.scrollY > 200 ? 'block' : 'none';
+    };
+  </script>
 
 </body>
 </html>
