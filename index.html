@@ -164,7 +164,22 @@ body {
   .sidenav a { font-size: 18px; }
 }
 
+@media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
+  .row {
+    flex-direction: column; /* Stack sections vertically */
+    gap: 20px; /* Add spacing between sections for readability */
+  }
 
+  .side, .main {
+    width: 100%; /* Full width for each section */
+    margin: 0; /* Remove horizontal margin */
+  }
+
+  .side .profile img {
+    width: 100%; /* Make profile image responsive */
+    height: auto;
+  }
+}
 
 </style>
 </head>
