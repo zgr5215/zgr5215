@@ -182,7 +182,7 @@ display: flex;
 
 @media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
   .sidenav {
-    width: 100%; /* Full width on mobile */
+    width: 0; /* Full width on mobile */
     padding-top: 60px; /* Add some padding for spacing */
   }
 
@@ -282,12 +282,24 @@ display: flex;
   const sidenav = document.getElementById("mySidenav");
   const main = document.getElementById("main");
 
-  if (sidenav.style.width === "250px") {
-    sidenav.style.width = "0";
-    main.style.marginLeft = "0";
+  // Check if the screen width is less than 768px (mobile)
+  if (window.innerWidth <= 768) {
+    if (sidenav.style.width === "100%") {
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+    } else {
+      sidenav.style.width = "100%";
+      main.style.marginLeft = "100%";
+    }
   } else {
-    sidenav.style.width = "250px";
-    main.style.marginLeft = "250px";
+    // Desktop version, set width to 250px
+    if (sidenav.style.width === "250px") {
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+    } else {
+      sidenav.style.width = "250px";
+      main.style.marginLeft = "250px";
+    }
   }
 }
 </script>
