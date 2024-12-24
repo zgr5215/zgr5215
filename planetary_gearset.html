@@ -1,196 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Subpage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<style>
+/* General reset */
+* {
+  box-sizing: border-box;
+}
 
-  <!-- CSS Styles -->
-  <style>
-    /* General Styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #2C3E50;
-      color: #ECF0F1;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #748D92;
+  color: #333;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+/* Navigation styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #3B4C56; /* Dark slate blue */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 0 0 10px 10px; /* Rounded corners */
+}
 
-    /* Top Navigation */
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #34495E;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+.navbar .menu-icon img {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  margin-left: 10px;
+}
 
-    .top-nav a {
-      color: #ECF0F1;
-      margin: 0 10px;
-    }
+.navbar .social-link img {
+display: flex;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  margin-left: 10px;
+}
 
-    /* Side Navigation */
-    .side-nav {
-      position: fixed;
-      left: 0;
-      top: 60px; /* Offset for top nav */
-      width: 200px;
-      height: calc(100% - 60px);
-      background-color: #3B4C56;
-      padding: 10px;
-    }
+/* Sidebar styles */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #212A31;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
 
-    .side-nav a {
-      display: block;
-      margin: 10px 0;
-      color: #ECF0F1;
-      padding: 5px;
-      border-radius: 5px;
-    }
+.sidenav a {
+  padding: 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #748D92;
+  display: block;
+  transition: 0.3s;
+}
 
-    .side-nav a:hover {
-      background-color: #748D92;
-    }
+.sidenav a:hover {
+  color: #f1f1f1;
+}
 
-    /* Main Content */
-    .content {
-      margin-left: 220px; /* Offset for side nav */
-      padding: 20px;
-    }
+.sidenav .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  cursor: pointer;
+}
 
-    /* Back to Top Button */
-    #backToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: none;
-      padding: 10px;
-      border: none;
-      background-color: #3B4C56;
-      color: white;
-      cursor: pointer;
-      border-radius: 50%;
-    }
+/* Main content styles */
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+  margin-top: 60px;
+}
 
-    #backToTop:hover {
-      background-color: #748D92;
-    }
-  </style>
+/* About Me and Project Boxes using Flexbox */
+.row {
+  display: flex; /* Flex container to align items side by side */
+  gap: 10px; /* 10px space between About Me and Projects */
+}
 
+.side, .main {
+  padding: 20px;
+  margin: 0; /* No margin here since gap is used */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #D3D9D4; /* White background */
+
+}
+
+.side {
+  width: 30%; /* 30% width for the About Me section */
+  height: 50%;
+
+}
+
+.overview {
+  margin-bottom: 2px; /* 10px space between projects */
+}
+
+.overview h4 {
+  color: #124E66;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.overview h4:hover {
+  color: #748D92;
+  text-decoration: underline;
+}
+
+.overview hr {
+  width: 100%; /* Full width */
+  border: 0; /* Remove default border */
+  height: 4px; /* Height of the line */
+  background-color: #124E66; /* Line color */
+  margin: 10px 0; /* Optional: spacing around the line */
+}
+
+.main {
+  width: 70%; /* 70% width for the Projects section */
+}
+
+/* Project section */
+.project {
+  margin-bottom: 10px; /* 10px space between projects */
+}
+
+.project .status img {
+  width: 75%;
+  height: 75%;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.project h2 {
+  color: #124E66;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.project h2:hover {
+  color: #748D92;
+  text-decoration: underline;
+}
+
+.side p {
+  word-wrap: break-word; /* Ensure long words like emails break */
+  word-break: break-word; /* Prevents overflow and allows text wrapping */
+  white-space: normal; /* Allows text to wrap to the next line */
+}
+
+/* General text styling */
+.side h3, .side p {
+  margin: 10px 0;
+}
+
+/* Small screen adjustments */
+@media screen and (max-height: 450px) {
+  .sidenav { padding-top: 15px; }
+  .sidenav a { font-size: 18px; }
+}
+
+@media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
+  .row {
+    flex-direction: column; /* Stack sections vertically */
+    gap: 20px; /* Add spacing between sections for readability */
+  }
+
+  .side, .main {
+    width: 100%; /* Full width for each section */
+    margin: 0; /* Remove horizontal margin */
+  }
+
+  .side .profile img {
+    width: 100%; /* Make profile image responsive */
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) { /* Adjust breakpoint as needed */
+  .sidenav {
+    width: 0; /* Full width on mobile */
+    padding-top: 60px; /* Add some padding for spacing */
+  }
+
+  .sidenav a {
+    font-size: 20px; /* Slightly larger text for easier tapping */
+    padding: 12px 20px; /* Adjust padding for better spacing */
+  }
+
+  .sidenav .closebtn {
+    font-size: 30px; /* Slightly smaller close button */
+    top: 15px; /* Adjust placement */
+    right: 20px;
+  }
+}
+
+</style>
 </head>
+
+
 <body>
-
-  <!-- Top Navigation -->
-  <header class="top-nav">
-    <a href="index.html" class="logo">Home</a>
-    <nav>
-      <a href="#overview">Overview</a>
-      <a href="#challenges">Challenges</a>
-      <a href="#solutions">Solutions</a>
-      <a href="#results">Results</a>
-    </nav>
-  </header>
-
-  <!-- Side Navigation -->
-  <aside class="side-nav">
-    <nav>
-      <a href="#overview">Overview</a>
-      <a href="#challenges">Challenges</a>
-      <a href="#solutions">Solutions</a>
-      <a href="#results">Results</a>
-    </nav>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="content">
-    <!-- Overview Section -->
-    <section id="overview">
-      <h1>Project Name</h1>
-      <p>Brief introduction or summary of the project.</p>
-    </section>
-
-    <!-- Challenges Section -->
-    <section id="challenges">
-      <h2>Challenges</h2>
-      <p>Describe the challenges faced during this project.</p>
-    </section>
-
-    <!-- Solutions Section -->
-    <section id="solutions">
-      <h2>Solutions</h2>
-      <p>Explain the solutions implemented to overcome the challenges.</p>
-    </section>
-
-    <!-- Results Section -->
-    <section id="results">
-      <h2>Results</h2>
-      <p>Showcase the results of the project.</p>
-
-      <!-- Commented-out Image Gallery -->
-      <!-- Uncomment and add images when ready -->
-      <!-- 
-      <div class="image-gallery">
-        <img src="image1.jpg" alt="Result Image 1">
-        <img src="image2.jpg" alt="Result Image 2">
+	<!-- Navigation Sidebar -->
+  <div id="mySidenav" class="sidenav">
+    <span class="closebtn" onclick="toggleNav()">&times;</span>
+    <a href="https://zgr5215.github.io/zgr5215">Home</a>
+    <a href="https://zgr5215.github.io/zgr5215/planetary_gearset.html">Planetary Gearset</a>
+    <a href="https://zgr5215.github.io/zgr5215/random_password_generator.html">Random Password Generator</a>
+    <a href="https://zgr5215.github.io/zgr5215">Contact</a>
+  </div>
+	
+    <!-- Navigation Topbar -->
+  <div id="main">
+    <div class="navbar">
+      <div class="menu-icon" onclick="toggleNav()">
+        <img src="images/menu.jpg" alt="Menu">
       </div>
-      -->
-
-      <!-- Commented-out Video Section -->
-      <!-- Uncomment and add video file when ready -->
-      <!-- 
-      <div class="video-section">
-        <video controls>
-          <source src="process.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      -->
-    </section>
-
-    <!-- Downloads Section -->
-    <section id="downloads">
-      <h2>Downloadable Resources</h2>
-      <p>Download files related to this project.</p>
-
-      <!-- Commented-out Download Links -->
-      <!-- Uncomment and link files when ready -->
-      <!-- 
-      <div class="downloads">
-        <a href="design_files.zip" download>
-          <button class="download-btn">Download CAD Files</button>
-        </a>
-        <a href="project_report.pdf" download>
-          <button class="download-btn">Download Report</button>
+      <div class="social-link">
+        <a href="https://www.linkedin.com/in/zgr5215">
+          <img src="images/linkedin.png" alt="LinkedIn">
         </a>
       </div>
-      -->
-    </section>
-  </main>
+    </div>
+ 	
+    <!-- About Me -->
+    <div class="row">
+      <div class="side">
+        <div class="overview">
+        <h1>Step-Through</h1>
+        <h4>Overview</h4>
+        <hr>
+        <h4>Challenges</h4>
+        <hr>
+        <h4>Solutions</h4>
+        <hr>
+        <h4>Results</h4>
+      </div>
+      </div>
+      
+      <!-- Project 1 -->
+      <div class="main">
+        <div class="project">
+        <h1>Technical Projects</h1>
+          <h2>
+      <a href="https://zgr5215.github.io/zgr5215/planetary_gearset.html" style="text-decoration: none; color: inherit;">
+        Planetary Gearset
+      </a>
+    </h2>
+          <h5>Mechanical Design Project, Sept-Dec 2021</h5>
+		<div class="status">
+          <img src="images/gearset1.jpg" alt="Photo of Me">
+      </div>
+          <p>This project involves designing and prototyping a fully functional planetary gearset. Starting with a wooden prototype, the final model showcases precision-machined aluminum components.</p>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project">
+          <h2>
+            <a href="https://zgr5215.github.io/zgr5215/random_password_generator.html" style="text-decoration: none; color: inherit;">
+            Random Password Generator
+          </a>
+          </h2>
+          <h5>Electronics and Software Design, Jan-Apr 2022</h5>
+				<div class="status">
+          <img src="images/rand_pass.png" alt="Photo of Me">
+      </div>
+          <p>A secure and efficient random password generator built using Raspberry Pi and Python, featuring customizable parameters and a user-friendly interface.</p>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project">
+          <h2>
+            <a href="https://zgr5215.github.io/zgr5215/3D_printer_controller.html" style="text-decoration: none; color: inherit;">
+            3D Printer Controller
+          </a>
+          </h2>
+          <h5>Mechatronics Project, Jan-Apr 2022</h5>
+				<div class="status">
+          <img src="images/3D_print.png" alt="Photo of Me">
+      </div>
+          <p>Developed a remote 3D printer control system using a Raspberry Pi and control board, enabling wireless operation and enhanced functionality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" onclick="scrollToTop()">↑</button>
+<script>
+  function toggleNav() {
+  const sidenav = document.getElementById("mySidenav");
+  const main = document.getElementById("main");
 
-  <!-- JavaScript -->
-  <script>
-    // Scroll to Top Functionality
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Check if the screen width is less than 768px (mobile)
+  if (window.innerWidth <= 768) {
+    if (sidenav.style.width === "100%") {
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+    } else {
+      sidenav.style.width = "100%";
+      main.style.marginLeft = "100%";
     }
-
-    window.onscroll = function () {
-      const button = document.getElementById('backToTop');
-      button.style.display = window.scrollY > 200 ? 'block' : 'none';
-    };
-  </script>
-
+  } else {
+    // Desktop version, set width to 250px
+    if (sidenav.style.width === "250px") {
+      sidenav.style.width = "0";
+      main.style.marginLeft = "0";
+    } else {
+      sidenav.style.width = "250px";
+      main.style.marginLeft = "250px";
+    }
+  }
+}
+</script>
 </body>
 </html>
